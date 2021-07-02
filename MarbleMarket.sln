@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarbleMarket", "MarbleMarket\MarbleMarket.csproj", "{B7C5EBAE-A4C1-4BD1-9597-77A07F172995}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7C5EBAE-A4C1-4BD1-9597-77A07F172995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7C5EBAE-A4C1-4BD1-9597-77A07F172995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7C5EBAE-A4C1-4BD1-9597-77A07F172995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7C5EBAE-A4C1-4BD1-9597-77A07F172995}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AED2A61-9EAF-404F-B110-FC40D76F2EC4}
+	EndGlobalSection
+EndGlobal
