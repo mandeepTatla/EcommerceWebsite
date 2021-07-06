@@ -1,4 +1,5 @@
 using MarbleMarket.Data;
+using MarbleMarket.Data.Intializer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -42,12 +43,13 @@ namespace MarbleMarket
                 Options.Cookie.IsEssential = true;
 
             });
+            services.AddScoped<IDbInitializer, DbInitializer>();
             services.AddControllersWithViews();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -70,6 +72,7 @@ namespace MarbleMarket
             //only store integer or strings. we want to store a list of item and object that is not supported by default with .Net core.
             //** Add extension method on session to configure that  
             app.UseSession();
+            dbInitializer.Initialize();
             //Add an endpoint for razor pages as the pages that are scaffoded for identity are not MVC pages they are
             //rajor class library . As Rajor pages are slightey different as compared to MVC. 
             app.UseEndpoints(endpoints =>

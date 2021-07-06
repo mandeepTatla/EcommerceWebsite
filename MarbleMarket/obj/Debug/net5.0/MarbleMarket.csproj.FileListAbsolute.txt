@@ -318,7 +318,6 @@ C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\bin\Debug\net5.0\ru\Microso
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\MarbleMarket.csprojAssemblyReference.cache
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\MarbleMarket.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\MarbleMarket.AssemblyInfoInputs.cache
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\MarbleMarket.AssemblyInfo.cs
@@ -487,3 +486,4 @@ C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\Razor\Area
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\tatla\Desktop\MVC\MarbleMarket\MarbleMarket\obj\Debug\net5.0\MarbleMarket.csproj.AssemblyReference.cache

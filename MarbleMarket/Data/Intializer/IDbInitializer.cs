@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace MarbleMarket.Data.Intializer
 {
-    interface IDbInitializer
+   public interface IDbInitializer
     {
+
+        void Initialize();
     }
 }
