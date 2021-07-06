@@ -1,6 +1,7 @@
 ﻿using MarbleMarket.Data;
 using MarbleMarket.Models;
 using MarbleMarket.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace MarbleMarket.Controllers
 {
+    [Authorize(Roles =WC.AdminRole)]
     public class ProductController : Controller
     {
         private readonly ApplicationDbContext _db;

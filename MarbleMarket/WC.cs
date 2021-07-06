@@ -7,7 +7,11 @@ namespace MarbleMarket
 {
     public static class WC
     {
-        public static string Imagepath = @"\images\product\";
-        public static string SessionCart = "ShoppingCartSession";
+        public const string Imagepath = @"\images\product\";
+        public const string SessionCart = "ShoppingCartSession";
+
+        public const string AdminRole = "Admin";
+        public const string CustomerRole = "Customer";
+
     }
 }

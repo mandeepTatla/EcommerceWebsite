@@ -1,6 +1,8 @@
 ﻿using MarbleMarket.Data;
 using MarbleMarket.Models;
 using MarbleMarket.Models.ViewModels;
+using MarbleMarket.Utility;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -34,15 +36,65 @@ namespace MarbleMarket.Controllers
             return View(homeVM);
         }
 
+    
+
         public IActionResult Details(int id)
         {
-          DetailsVM  DetailsVM = new DetailsVM()
+            List<ShoppingCart> shoppingCartList = new List<ShoppingCart>();
+            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null &&
+               HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
+            {
+                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
+            }
+
+
+            DetailsVM  DetailsVM = new DetailsVM()
             {
                 Product = _db.Product.Include(u => u.Category).Include(u => u.ApplicationType)
                 .Where(u => u.Id == id).FirstOrDefault(),
                 ExistsInCart = false
             };
+
+            foreach (var item in shoppingCartList)
+            {
+                if(item.productId == id)
+                {
+                    DetailsVM.ExistsInCart = true;
+                }
+            }
             return View(DetailsVM);
+        }
+
+        [HttpPost,ActionName("Details")]
+        public IActionResult DetailsPost(int id)
+        {
+            List<ShoppingCart> shoppingCartList = new List<ShoppingCart>();
+            if(HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) !=null &&
+               HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
+            {
+                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
+            }
+            shoppingCartList.Add(new ShoppingCart { productId = id });
+            HttpContext.Session.Set(WC.SessionCart, shoppingCartList);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult RemoveFromCart(int id)
+        {
+            List<ShoppingCart> shoppingCartList = new List<ShoppingCart>();
+            if (HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart) != null &&
+               HttpContext.Session.Get<IEnumerable<ShoppingCart>>(WC.SessionCart).Count() > 0)
+            {
+                shoppingCartList = HttpContext.Session.Get<List<ShoppingCart>>(WC.SessionCart);
+            }
+            var itemtoRemove = shoppingCartList.SingleOrDefault(r => r.productId == id);
+            if(itemtoRemove!= null)
+            {
+                shoppingCartList.Remove(itemtoRemove);
+            }
+         
+            HttpContext.Session.Set(WC.SessionCart, shoppingCartList);
+            return RedirectToAction(nameof(Index));
         }
         public IActionResult Privacy()
         {
